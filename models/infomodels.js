@@ -61,16 +61,28 @@ class Group{
             console.log("student "+student.name+" already in group "+this.name);
         }
     }
-    found(student1){
+    removeStudent(student){
+        ind = this.giveIndexOf(student)
+        if(ind != undefined){
+            this.studentList.splice(ind,1)
+        }else{
+            console.log("you tried to remove "+student.name+" from group "+this.name+" that they were not in");
+        }
+    }
+    giveIndexOf(student1){
         //you could change it to binary search later;
-        f = false;
-        for(student in this.studentList){
+        //students unique by number
+        for(i=0; i<this.studentList.length; i++){
+            student = this.studentList[i];
             if(student.number==student1.number){
-                f = true;
+                return i;
                 break;
             }
         }
-        return f;
+        return undefined;
+    }
+    found(student1){
+        return this.giveIndexOf(student1) != undefined;
     }
     productivity(student){
         //gives ranking for how well a given student would work in this group
@@ -109,6 +121,9 @@ class StudyGroups {
         }else{
             this.groupList[index].addStuent(student);
         }
+    }
+    removeStudentFrom(student,index){
+        this.groupList[index].removeStudent(student);
     }
     addStudent(student){
         if(!this.found(student)){
