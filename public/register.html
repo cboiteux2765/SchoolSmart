@@ -14,9 +14,53 @@
         <label for="username">Username:</label> <br>
         <input type="text" id="input_username"> <br>
         <label for="password">Password:</label> <br>
-        <input type="text" id="inout_password">
+        <input type="text" id="input_password"> <br>
+
+        <label for="class1">Class #1: </label>
+        <label for="grade1">Grade: </label> <br>
+        <input type="text" id="class1">
+        <input type="text" id="grade1"> <br>
+
+        <label for="class2">Class #2: </label>
+        <label for="grade2">Grade: </label> <br>
+        <input type="text" id="class2">
+        <input type="text" id="grade2"> <br>
+
+        <label for="class1=3">Class #3: </label>
+        <label for="grade3">Grade: </label> <br>
+        <input type="text" id="class3">
+        <input type="text" id="grade3"> <br>
     </form> <br>
-    <button>Submit</button> <br> <br>
+    <button onclick="addStudent()">Submit</button> <br> <br>
+    <script>
+        const fs = require('fs')
+
+        let users = [];
+        let username = document.getElementById('input_username');
+        let password = document.getElementById('input_password');
+
+        class User {
+            constructor(username, password) {
+                this.username = username;
+                this.password = password;
+            }
+
+            username() {
+                return this.username;
+            }
+
+            password() {
+                return this.password;
+            }
+        }
+
+        function addStudent(username, password) {
+            let newUser = new User(username, password);
+            users.push(newUser);
+            fs.writeFileSync('usernames.txt', username);
+            fs.writeFileSync('passwords.txt', password);
+        }
+    </script>
 
 </body>
 </html>
