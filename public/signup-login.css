@@ -1,3 +1,56 @@
+/*
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Monteserrat:500');
+
+
+
 * {
-    background-color: aqua;
+    background-color: #003300;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+li, a, ul, button {
+    font-family: "Helvetica Neue";
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.navbar_links li {
+    display: inline-block;
+    padding: 0px 30px;
+}
+
+.navbar_links li a {
+    transition: all 0.3s ease 0s;
+
+}
+
+.navbar_links li a: hover {
+    color: #0088a;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
