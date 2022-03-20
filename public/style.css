@@ -8,7 +8,7 @@
 
 
 * {
-    background-color: aqua;
+    background-color: black;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -16,6 +16,14 @@
 }
 
 h1 {
+    font-family: "Helvetica Neue";
+    font-weight: 500;
+    font-size: 25px;
+    color: #edf0f1;
+    text-decoration: none; 
+}
+
+h2 {
     font-family: "Helvetica Neue";
     font-weight: 500;
     font-size: 30px;
