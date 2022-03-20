@@ -46,7 +46,7 @@ class Group{
         this.elem.appendChild(this.posting);
     }
 }
-class StudyGroups(){
+class StudyGroups {
     constructor(groupList, subject){
         this.subject = subject;
         this.elem = document.createElement("div");
