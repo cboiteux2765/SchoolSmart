@@ -8,15 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="register.js"></script>
+    <script src="students.js"></script>
     <h1>Register</h1>
     <form method="post">
         <label for="username">Username:</label> <br>
         <input type="text" id="input_username"> <br>
         <label for="password">Password:</label> <br>
-        <input type="text" id="inout_password">
+        <input type="text" id="input_password"> <br>
+
+        <label for="class1">Class #1: </label>
+        <label for="grade1">Grade: </label> <br>
+        <input type="text" id="class1">
+        <input type="text" id="grade1"> <br>
+
+        <label for="class2">Class #2: </label>
+        <label for="grade2">Grade: </label> <br>
+        <input type="text" id="class2">
+        <input type="text" id="grade2"> <br>
+
+        <label for="class1=3">Class #3: </label>
+        <label for="grade3">Grade: </label> <br>
+        <input type="text" id="class3">
+        <input type="text" id="grade3"> <br>
     </form> <br>
-    <button>Submit</button> <br> <br>
+    <button onclick="addStudent()">Submit</button> <br> <br>
 
 </body>
 </html>

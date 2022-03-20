@@ -8,7 +8,7 @@
 
 
 * {
-    background-color: #003300;
+    background-color: aqua;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -62,8 +62,8 @@ header {
 
 }
 
-.navbar_links li a: hover {
-    color: #0088a;
+.navbar_links li a:hover {
+    color: #0088a0;
 }
 
 button {
