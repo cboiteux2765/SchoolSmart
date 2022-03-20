@@ -88,22 +88,10 @@ img {
     opacity: 0.5;
 }
 
-/*
-.demo-wrap {
-  overflow: hidden;
-  position: relative;
-}
+.box {
+    background-image: url("https://www.princetonreview.com/cms-content/how-to-make-the-most-out-of-mcat-study-group.jpg");
+    padding: 100px;
+    margin: 100px;
 
-.demo-bg {
-  opacity: 0.6;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
+    background-repeat: repeat-x;
 }
-
-.demo-content {
-  position: relative;
-}
-*/
