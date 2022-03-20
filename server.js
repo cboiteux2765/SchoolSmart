@@ -5,9 +5,17 @@ const port = process.env.PORT || 3000;
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.redirect('./public/homepage.html');
+    res.send('Up and running!');
+});
+
+app.get('/about', (req, res) => {
+    res.redirect('localhost:8080/about');
+});
+
+app.post('/', (req, res) => {
+    
 });
 
 app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-});
+    console.log(`Listening on port ${port}`);
+})
