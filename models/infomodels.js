@@ -64,7 +64,7 @@ class Group{
     removeStudent(student){
         ind = this.giveIndexOf(student)
         if(ind != undefined){
-            this.studentList.splice(ind,1)
+            this.studentList.splice(ind,1);
         }else{
             console.log("you tried to remove "+student.name+" from group "+this.name+" that they were not in");
         }
