@@ -50,8 +50,7 @@ label {
 input {
     width: 20%;
     padding: 12px 20px;
-    
-
+    color: white;
 }
 
 header {
@@ -63,7 +62,7 @@ header {
 
 .navbar_links li {
     display: inline-block;
-    padding: 0px 10px;
+    padding: 0px 20px;
 }
 
 .navbar_links li a {

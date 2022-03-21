@@ -105,9 +105,7 @@ class StudyGroups {
         this.title.innerHTML = this.subject;
     }
     addStudentIn(student,index){
-        if(index==undefined){
-            this.addStudent(student);
-        }else{
+        if(index!=undefined){
             this.groupList[index].addStuent(student);
         }
     }
