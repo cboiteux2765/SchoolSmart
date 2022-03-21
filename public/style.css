@@ -78,6 +78,9 @@ header {
 button {
     padding: 9px 25px;
     background-color: rgba(0, 136, 169, 1);
+    /*
+    background-image: "https://thumbs.dreamstime.com/b/study-icon-vector-male-group-students-person-profile-avatar-mortar-board-hat-symbol-school-college-university-163943996.jpg";
+    */
     border: none;
     border-radius: 50px;
     cursor: pointer;
