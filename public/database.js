@@ -34,9 +34,20 @@ function enterSubject(subject){
 }
 //current index showing on the dropdown menu
 theGroupIndex = undefined;
+function clickJoinButton(){
+    inputField = document.getElementById("joiningGroupField");
+    var index;
+    for(var i=0; i<apSubjects.length; i++){
+        if(apSubjects[i]==inputField){
+            index = i;
+            break;
+        }
+    }
+    selectGroupIndexToJoin(index);
+}
 function selectGroupIndexToJoin(index){
     var theStudyGroups = theSubjectGroupingList[theSubjectIndex];
-    theStudyGroups.removeStudentFrom(student,index);
+    theStudyGroups.removeStudentFrom(you,theGroupIndex);
     theGroupIndex = index;
     theStudyGroups.addStudentIn(you,theGroupIndex);
 }
