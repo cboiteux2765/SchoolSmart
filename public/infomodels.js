@@ -123,17 +123,21 @@ class StudyGroups {
         }
     }
     removeStudentFrom(student,index){
-        this.groupList[index].removeStudent(student);
+        if(!index==undefined){
+            this.groupList[index].removeStudent(student);
+        }
     }
     addStudent(student){
         if(!this.found(student)){
-            n = this.groupList.length;
-            newgroup = new Group(n+1,[student],this.subject);
+            var n = this.groupList.length;
+            var newgroup = new Group(n+1,[student],this.subject);
             this.groupList.push(newgroup);
             this.elem.appendChild(newgroup.elem);
-            console.log("added student "+studnet.name)
+            console.log("added student "+studnet.name);
+            return true;
         }else{
             console.log(student.name+" already in a group");
+            return false;
         }
     }
     found(student){
