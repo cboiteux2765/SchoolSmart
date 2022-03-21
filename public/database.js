@@ -1,30 +1,26 @@
-<<<<<<< Updated upstream
-function joinButtonClick
-=======
 //can change
 const apSubjects = ["Calculus BC","French","Literature","World History","Chemistry","Studio Art"];
 theStudentList = [];
 //stores list of Student objects , IN ORDER OF WHEN THE STUDENTS LOGGED IN!
-theSubjectGroupingList = [];
+var theSubjectGroupingList = [];
 //stores list of StudyGroup objects, in the same order as the ap subjects
-homeDisplay = document.getElementById("groupShowScreen");
-homeDisplay.style = "block";
-joinDisplay = document.getElementById("joinShowScreen");
-joinDisplay.style = "block";
-createdDisplay = document.getElementById("createdShowScreen");
-createdDisplay.style = "block";
-
+var viewDisplay = document.getElementById("groupShowScreen");
+//currently selected subject
 var theSubjectIndex = undefined;
+//you should be set to the student who is the user
+var you = undefined;
+//what it says on the created group confirmation page
+var createdHead = document.getElementById("createdPageHead");
 
-for(s in apSubjects){
-    g = new StudyGroups([],s)
+for(var s in apSubjects){
+    var g = new StudyGroups([],s)
     theSubjectGroupingList.push(g);
-    homeDisplay.appendChild(g.elem);
+    viewDisplay.appendChild(g.elem);
 }
 
 function enterSubject(subject){
-    index = undefined;
-    for(i=0; i<apSubjects.length; i++){
+    var index = undefined;
+    for(var i=0; i<apSubjects.length; i++){
         if(subject==apSubjects[i]){
             index = i;
             break;
@@ -36,23 +32,20 @@ function enterSubject(subject){
         theSubjectGroupingList[theSubjectIndex].show();
     }
 }
-function homeButtonClick(){
-    homeDisplay.style = "block";
-    joinDisplay.style = "none";
-    createdDisplay.style = "none";
+//current index showing on the dropdown menu
+theGroupIndex = undefined;
+function selectGroupIndexToJoin(index){
+    var theStudyGroups = theSubjectGroupingList[theSubjectIndex];
+    theStudyGroups.removeStudentFrom(student,index);
+    theGroupIndex = index;
+    theStudyGroups.addStudentIn(you,theGroupIndex);
 }
-function joinButtonClick(){
-    if(theSubjectIndex!=undefined){
-        homeDisplay.style = "none";
-        joinDisplay.style = "block";
-        createdDisplay.style = "none";
+function createGroup(){
+    var theStudyGroups = theSubjectGroupingList[theSubjectIndex];
+    var f = theStudyGroups.addStudent(you);
+    if(f){
+        createdHead.innerHTML = "Cool! You are now in group "+theStudyGroups.groupList.length;
+    }else{
+        createdHead.innerHTML = "You are already in a group";
     }
 }
-function createButtonClick(){
-    if(theSubjectIndex!=undefined){
-        homeDisplay.style = "none";
-        joinDisplay.style = "none";
-        createdDisplay.style = "block";
-    }
-}
->>>>>>> Stashed changes

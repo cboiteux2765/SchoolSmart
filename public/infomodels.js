@@ -14,13 +14,12 @@ class Student{
         this.initiateDiv();
     }
     initiateDiv(){
-        title = document.createElement("div");
+        var title = document.createElement("div");
         title.innerHTML = this.name;
         this.elem.id = this.name;
-        this.elem.style = "block";
         this.elem.appendChild(title);
-        for(s2 in contactsList){
-            el = document.createElement('p')
+        for(var s2 in contactsList){
+            var el = document.createElement('p')
             el.innerHTML = s2[0]+" : "+s2[1]
             this.elem.appendChild(el);
         }
@@ -41,8 +40,7 @@ class Group{
         this.elem.id = subject+this.name;
         this.posting = document.createElement("p");
         this.initPosting();
-        this.elem.style = "block";
-        for(student in this.studentList){
+        for(var student in this.studentList){
             this.elem.appendChild(student.elem);
         }
         
@@ -62,7 +60,7 @@ class Group{
         }
     }
     removeStudent(student){
-        ind = this.giveIndexOf(student)
+        var ind = this.giveIndexOf(student)
         if(ind != undefined){
             this.studentList.splice(ind,1);
         }else{
@@ -73,7 +71,7 @@ class Group{
         //you could change it to binary search later;
         //students unique by number
         for(i=0; i<this.studentList.length; i++){
-            student = this.studentList[i];
+            var student = this.studentList[i];
             if(student.number==student1.number){
                 return i;
                 break;
@@ -98,22 +96,13 @@ class StudyGroups {
         this.title = document.createElement("p");
         this.initTitle();
         this.elem.appendChild(this.title);
-        for(group in groupList){
+        for(var group in groupList){
             this.elem.appendChild(group.elem);
         }
-
-        //default hidden
-        this.elem.style = "none";
     }
     initTitle(){
         this.title.id=this.elem.id+"title";
         this.title.innerHTML = this.subject;
-    }
-    show(){
-        this.elem.style = "block";
-    }
-    hide(){
-        this.elem.style = "none";
     }
     addStudentIn(student,index){
         if(index==undefined){
@@ -123,22 +112,26 @@ class StudyGroups {
         }
     }
     removeStudentFrom(student,index){
-        this.groupList[index].removeStudent(student);
+        if(!index==undefined){
+            this.groupList[index].removeStudent(student);
+        }
     }
     addStudent(student){
         if(!this.found(student)){
-            n = this.groupList.length;
-            newgroup = new Group(n+1,[student],this.subject);
+            var n = this.groupList.length;
+            var newgroup = new Group(n+1,[student],this.subject);
             this.groupList.push(newgroup);
             this.elem.appendChild(newgroup.elem);
-            console.log("added student "+studnet.name)
+            console.log("added student "+studnet.name);
+            return true;
         }else{
             console.log(student.name+" already in a group");
+            return false;
         }
     }
     found(student){
-        f = false
-        for(group in this.groupList){
+        var f = false
+        for(var group in this.groupList){
             if(group.found(student)){
                 f = true;
                 break;
