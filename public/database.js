@@ -1,7 +1,5 @@
 //can change
 const apSubjects = ["Calculus BC","French","Literature","World History","Chemistry","Studio Art"];
-theStudentList = [];
-//stores list of Student objects , IN ORDER OF WHEN THE STUDENTS LOGGED IN!
 var theSubjectGroupingList = [];
 //stores list of StudyGroup objects, in the same order as the ap subjects
 var viewDisplay = document.getElementById("groupShowScreen");
