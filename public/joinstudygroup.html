@@ -1,3 +1,5 @@
+<!-- UNUSED -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +10,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul class="navbar_links">
+                <a class="cta" href="index.html"><button>Home</button></a>
+                <li><a href="viewstudygroups.html">View Study Groups</a></li>
+                <li><a href="joinstudygroup.html">Join a Study Group</a></li>
+                <li><a href="createstudygroup.html">Create a Study Group</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <img src="https://www.princetonreview.com/cms-content/how-to-make-the-most-out-of-mcat-study-group.jpg">
     <script src="database.js"></script>
     <script src="infomodels.js"></script>
     <form>
+        <label for="stuff">Subject:</label>
         <input type="text" id="joiningGroupField">
     </form>
-    <button onclick="clickJoinButton()"></button>
+    <button onclick="window.location.href='viewstudygroups.html'">Submit</button>
 </body>
 </html>
