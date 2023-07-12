@@ -1,2 +1,2 @@
-# React-App
+# SchoolSmart
 By Fifi, Clem, and Kieran
