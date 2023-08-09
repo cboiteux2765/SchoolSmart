@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Group Thing</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script src="script.js"></script>
     <header>
         <nav>
             <ul class="navbar_links">
@@ -22,39 +23,34 @@
         </nav>
         
     </header>   
-       
     
     <br>
 
-    <center> 
+    <h2>
+        Find a study group today!
+    </h2>
 
-        <h2>
-            Find a study group today!
-        </h2>
+    <div class="box">
+    </div>
+    
 
-        <div class="box">
-        </div>
-        
-
-        <h1>Login</h1> 
-        <br>
-    </center>
+    <h1>Login</h1> 
+    <br>
 
     <br>
-    
 
     <form>
-        <center> 
         <label for="username">Username:</label> <br>
         <br>
         <input type="text" id="username"> <br> <br>
         <label for="password">Password:</label> <br> <br>
         <input type="text" id="password">
         <br> <br>
+        <a href="forgotpassword.html"><p>Forgot password?</p></a>
         
     </form> <br>
-    <button onclick="window.location.href='index.html'">Submit</button> <br> <br>
-    </center>
+    <button onclick="login()">Submit</button> <br> <br>
+
 
     <!--
     Don't have an account? Register <a href="register.html">here</a> <br>
