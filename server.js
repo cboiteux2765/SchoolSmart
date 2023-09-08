@@ -5,6 +5,9 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 app.use(express.static('public'));
 
+let studyGroups = [];
+
+
 app.get('/', (req, res) => {
     res.on('error', err => {
         console.log(err);
@@ -13,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-
+    
 });
 
 app.get('/joinstudygroup', (req, res) => {
@@ -41,11 +44,16 @@ app.get('/createstudygroup', (req, res) => {
 });
 
 app.post('/createstudygroup:id', (req, res) => {
-
+    let newGroup = req.params['id'];
+    studyGroups.push(newGroup);
+    studyGroups.sort((a, b) => a.localeCompare(b));
 });
 
 app.get('/login', (req, res) => {
-
+    res.send({
+        "user":"clem",
+        "pw":"123",
+    });
 });
 
 app.post('/login/:id', (req, res) => {
